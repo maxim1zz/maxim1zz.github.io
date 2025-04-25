@@ -5,12 +5,12 @@
   "type": "module",
   "homepage": "maximi.me",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "npm run build && gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
