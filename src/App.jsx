@@ -32,6 +32,8 @@ function App() {
   const [index, setIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
   let pp = faPlay;
+  let pause = faPause;
+  const [showButtonA, setShowButtonA] = useState(true);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -107,7 +109,6 @@ function App() {
       console.log(pp)
       audioElement.play();
     }
-
     console.log(isPlaying);
   };
 
@@ -128,7 +129,7 @@ function App() {
       </video>*/}
       {showOverlay && (
         <div className="overlay" onClick={handleOverlayClick}>
-          <p1 className="click">Click Anywhere</p1>
+          <p1 className="click">Click Anywhere (early development)</p1>
         </div>
       )}
 
@@ -145,7 +146,7 @@ function App() {
             </div>
             <div className="info">
               <h1 className="name">sakuii</h1>
-              <h1 className="bio">professional trader (jaja){bio}</h1> {/* Bio with typewriter effect */}
+              <h1 className="bio">professional trader/dev (jaja){bio}</h1> {/* Bio with typewriter effect */}
             </div>
             <div className="links">
               <a
@@ -167,8 +168,8 @@ function App() {
         <div className="middle-container">
           <div className="dcContainer">
             <img src="/src/images/ttpfp1.jpeg" alt="pfp" />
-          <h2 className="ttName" >@maximi</h2>
-          <a href="#" className="extLink">Open in TikTok</a>
+          <h2 className="ttName" >@maxim.zy</h2>
+          <a href="https://www.tiktok.com/@maxim.zy?_t=ZN-8vpMCNTw7zK&_r=1" className="extLink">Open in TikTok</a>
           </div>
         </div>
 
@@ -208,12 +209,14 @@ function App() {
                     onClick={handlePlayPause}
                     className="play-pause-btn"
                     id="playPauseBtn"
+                    style={{ display: "flex" }}
                   >
                     <FontAwesomeIcon
                       icon={pp}
                       style={{ color: "#ffffff" }}
                     />
                   </button>
+
                   <button className="forward-btn">
                   <FontAwesomeIcon icon={faForwardStep} />
                   </button>

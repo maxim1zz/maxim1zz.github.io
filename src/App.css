@@ -744,7 +744,6 @@
         background-color: transparent;
         border: none;
         border-radius: 50%;
-        display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
@@ -773,7 +772,9 @@
         background-color: #1e7e34;
       }
 
-
+      .pause-btn {
+        
+      }
 
 /* Mobile CSS */
 
