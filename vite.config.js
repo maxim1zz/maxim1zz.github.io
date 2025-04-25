@@ -1,4 +1,4 @@
 // https://vitejs.dev/config/
 export default {
-  base: "/docs/", // keine Unterordner
+  base: "/", // keine Unterordner
 }
