@@ -145,11 +145,11 @@ function App() {
             </div>
             <div className="info">
               <h1 className="name">sakuii</h1>
-              <h1 className="bio">Hier steht eine super coole und informative information{bio}</h1> {/* Bio with typewriter effect */}
+              <h1 className="bio">professional trader (jaja){bio}</h1> {/* Bio with typewriter effect */}
             </div>
             <div className="links">
               <a
-                href="https://www.instagram.com/movemented/"
+                href="https://www.instagram.com/maxim._zzz/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
