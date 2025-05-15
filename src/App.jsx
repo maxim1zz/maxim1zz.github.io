@@ -163,7 +163,7 @@ function App() {
           </div>
         <div className="middle-container">
           <div className="dcContainer">
-            <img src="/src/images/ttpfp1.jpeg" alt="pfp" />
+            <img src="./images/ttpfp1.jpeg" alt="pfp" />
           <h2 className="ttName" >@maxim.zy</h2>
           <a href="https://www.tiktok.com/@maxim.zy?_t=ZN-8vpMCNTw7zK&_r=1" className="extLink">Open in TikTok</a>
           </div>
