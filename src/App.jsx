@@ -31,9 +31,7 @@ function App() {
   const [bioText] = useState("|");
   const [index, setIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
-  let pp = faPlay;
-  let pause = faPause;
-  const [showButtonA, setShowButtonA] = useState(true);
+  const [icon, setIcon] = useState(faPlay);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -99,18 +97,16 @@ function App() {
 
   const handlePlayPause = () => {
     const audioElement = document.getElementById("audio");
-    setIsPlaying(!isPlaying);
     if (isPlaying) {
-      pp = faPause
-      console.log(pp)
       audioElement.pause();
+      setIcon(faPlay); 
     } else {
-      pp = faPlay
-      console.log(pp)
       audioElement.play();
+      setIcon(faPause);
     }
-    console.log(isPlaying);
+    setIsPlaying(!isPlaying);
   };
+
 
   const handleOverlayClick = () => {
     setShowOverlay(false);
@@ -146,7 +142,7 @@ function App() {
             </div>
             <div className="info">
               <h1 className="name">sakuii</h1>
-              <h1 className="bio">professional trader/dev (jaja){bio}</h1> {/* Bio with typewriter effect */}
+              <h1 className="bio">professional trader/dev (und valorant spieler){bio}</h1> {/* Bio with typewriter effect */}
             </div>
             <div className="links">
               <a
@@ -209,10 +205,9 @@ function App() {
                     onClick={handlePlayPause}
                     className="play-pause-btn"
                     id="playPauseBtn"
-                    style={{ display: "flex" }}
                   >
                     <FontAwesomeIcon
-                      icon={pp}
+                      icon={icon}
                       style={{ color: "#ffffff" }}
                     />
                   </button>
