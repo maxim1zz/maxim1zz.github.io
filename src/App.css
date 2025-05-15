@@ -21,6 +21,10 @@
         filter: blur(10px) brightness(100%);
     }
 
+    .entered {
+        width: 40rem;
+    }
+
     :root {
         --card-color: hsl(260deg 100% 3%);
         --text-color: hsl(260deg 10% 55%);
@@ -380,7 +384,8 @@
         border-radius: 50%;
         object-fit: cover;
         border: 2px solid white;
-
+        filter: drop-shadow(rgb(155, 155, 155) 0px 0px 3.5px);
+        fill: rgb(155, 155, 155);
     }
 
     svg {
