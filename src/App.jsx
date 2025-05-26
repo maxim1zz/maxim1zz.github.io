@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { database, ref, get, set, update } from "./firebaseConfig";
 import { library } from '@fortawesome/fontawesome-svg-core'
 
 import "./App.css";
-import pfp from "./images/pfpWhite.jpg";
+import pfp from "./images/ttpfp.jpeg";
 import tiktokpfp from "./images/ttpfp1.jpeg"
 import view from "./images/viewW.svg";
 import insta from "./images/insta.png";
@@ -33,6 +34,7 @@ function App() {
   const [index, setIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
   const [icon, setIcon] = useState(faPlay);
+  const [views, setViews] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -55,6 +57,21 @@ function App() {
 
     return () => clearInterval(timer);
   }, [bioText, index, isTyping]);
+
+  useEffect(() => {
+    const viewsRef = ref(database, "pageViews");
+
+    get(viewsRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        const currentViews = snapshot.val();
+        setViews(currentViews + 1);
+        set(viewsRef, currentViews + 1);
+      } else {
+        set(viewsRef, 1);
+        setViews(1);
+      }
+    });
+  }, []);
 
   function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
@@ -140,6 +157,10 @@ function App() {
             <div className="wrapc">
               <div className="div1" id="break"></div>
               <img src={pfp} className="pfp" alt="Profile Picture" />
+            </div>
+            <div className="viewcounter">
+            <svg className="eye" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 12c0 1.654-1.346 3-3 3s-3-1.346-3-3 1.346-3 3-3 3 1.346 3 3zm9-.449s-4.252 8.449-11.985 8.449c-7.18 0-12.015-8.449-12.015-8.449s4.446-7.551 12.015-7.551c7.694 0 11.985 7.551 11.985 7.551zm-7 .449c0-2.757-2.243-5-5-5s-5 2.243-5 5 2.243 5 5 5 5-2.243 5-5z"/></svg>
+              <span>{views}</span>
             </div>
             <div className="info">
               <h1 className="name">sakuii</h1>

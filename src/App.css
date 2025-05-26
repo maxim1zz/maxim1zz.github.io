@@ -776,6 +776,21 @@
         
       }
 
+.viewcounter {
+    justify-content: flex-end;
+    display: flex;
+    color: white;
+    width: 100%;
+    margin-right: 1rem;
+    margin-top: .5rem;
+}
+
+.eye {
+    fill: white;
+    margin-right: .2rem;
+    height: 1.2rem;
+}
+
 /* Mobile CSS */
 
 @media only screen and (max-width: 600px) {
